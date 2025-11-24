@@ -40,13 +40,15 @@ export default function AdminDashboard() {
     setNegotiatingId(null) // Close negotiation box if open
 
     // Send to Supabase
+    // Send to Supabase
     const { error } = await supabase
       .from('creative_requests')
+      // @ts-ignore
       .update({ 
         status: newStatus,
         negotiation_notes: negotiationNotes 
       })
-      .eq('id', id) // CRUCIAL: Only update the row with this ID
+      .eq('id', id)
 
     if (error) alert('Error updating: ' + error.message)
   }
