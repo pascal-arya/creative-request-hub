@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white pb-20">
-      
+
       {/* 1. HERO SECTION */}
       <section className="text-center pt-24 pb-16 px-4">
         <h1 className="text-5xl md:text-7xl font-bold italic mb-6 tracking-tight leading-tight">
@@ -32,19 +32,19 @@ export default function Home() {
             Act through<br />Structure
           </span>
         </h1>
-        
+
         <p className="text-[#000503] italic mb-10 max-w-md mx-auto text-sm font-medium">
           Normalize & automate hub for internal dwdg art. The fastest team to plan requests and event banners.
         </p>
-        
-        <div className="flex justify-center gap-4">
-          <Link href="/request">
-            <button className={btnContainer}>
+
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+          <Link href="/request" className="w-full md:w-auto">
+            <button className={`w-full md:w-auto ${btnContainer}`}>
               <span className={btnText}>Apply your creative request</span>
             </button>
           </Link>
-          <Link href="/track">
-            <button className={btnContainer}>
+          <Link href="/track" className="w-full md:w-auto">
+            <button className={`w-full md:w-auto ${btnContainer}`}>
               <span className={btnText}>Track your application</span>
             </button>
           </Link>
@@ -56,14 +56,14 @@ export default function Home() {
         <h2 className="text-center text-xl font-bold italic mb-8 bg-clip-text text-transparent bg-gradient-to-b from-[#00B887] to-[#000503]">
           What can you do here?
         </h2>
-        
+
         <div className="grid md:grid-cols-2 gap-6">
           {/* Card 1 - Stroke reduced to p-[1px] */}
           <div className="p-[1px] rounded-2xl bg-gradient-to-b from-[#00B887] to-[#000503] shadow-md">
             <div className="bg-gradient-to-b from-white to-[#64C07A] p-8 rounded-2xl h-full flex flex-col justify-between items-start text-left">
               <div className="mb-6">
                 <h3 className="font-bold text-2xl italic mb-2 bg-clip-text text-transparent bg-gradient-to-b from-[#00B887] to-[#000503]">
-                  Watch your idea<br/>come true!
+                  Watch your idea<br />come true!
                 </h3>
                 <p className="text-[#000503] text-xs italic">
                   Send your creative brief via form and let us handle the rest.
@@ -81,8 +81,8 @@ export default function Home() {
           <div className="p-[1px] rounded-2xl bg-gradient-to-b from-[#00B887] to-[#000503] shadow-md">
             <div className="bg-gradient-to-b from-white to-[#64C07A] p-8 rounded-2xl h-full flex flex-col justify-between items-start text-left">
               <div className="mb-6">
-                 <h3 className="font-bold text-2xl italic mb-2 bg-clip-text text-transparent bg-gradient-to-b from-[#00B887] to-[#000503]">
-                  Track your<br/>application
+                <h3 className="font-bold text-2xl italic mb-2 bg-clip-text text-transparent bg-gradient-to-b from-[#00B887] to-[#000503]">
+                  Track your<br />application
                 </h3>
                 <p className="text-[#000503] text-xs italic">
                   Monitor the progress of your request in real-time.
@@ -90,7 +90,7 @@ export default function Home() {
               </div>
               <Link href="/track" className="w-full">
                 <button className={`w-full ${btnContainer}`}>
-                   <span className={btnText}>View your application</span>
+                  <span className={btnText}>View your application</span>
                 </button>
               </Link>
             </div>
@@ -103,7 +103,7 @@ export default function Home() {
         <h2 className="text-center text-xl font-bold italic mb-10 bg-clip-text text-transparent bg-gradient-to-b from-[#00B887] to-[#000503]">
           How your request are done?
         </h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
             { step: "1", title: "Apply", desc: "Fill the request form with detailed brief & assets." },
@@ -126,13 +126,13 @@ export default function Home() {
 
         {/* Regulation Button - Same new style */}
         <div className="text-center mt-8">
-           <Link href="/regulation">
-             <button className={btnContainer}>
-                <span className={`text-xs ${btnText}`}>
-                  READ OUR COMPLETE REGULATION
-                </span>
-             </button>
-           </Link>
+          <Link href="/regulation">
+            <button className={btnContainer}>
+              <span className={`text-xs ${btnText}`}>
+                READ OUR COMPLETE REGULATION
+              </span>
+            </button>
+          </Link>
         </div>
       </section>
 
@@ -141,13 +141,13 @@ export default function Home() {
         <h2 className="text-center text-xl font-bold italic mb-8 bg-clip-text text-transparent bg-gradient-to-b from-[#00B887] to-[#000503]">
           Frequently Asked Question (FAQ)
         </h2>
-        
+
         <div className="space-y-3">
           {faqs.map((faq, index) => (
             // FAQ Cards - Stroke reduced to p-[1px]
             <div key={index} className="p-[1px] rounded-xl bg-gradient-to-b from-[#00B887] to-[#000503] shadow-sm group">
               <div className="rounded-xl overflow-hidden">
-                <button 
+                <button
                   onClick={() => toggleFaq(index)}
                   // FAQ Button now matches others: Default Dark -> Hover Light
                   className="w-full text-left p-4 font-bold italic text-sm flex justify-between items-center transition-all 
@@ -161,7 +161,7 @@ export default function Home() {
                     {openFaq === index ? '-' : '+'}
                   </span>
                 </button>
-                
+
                 {openFaq === index && (
                   <div className="bg-white p-4 text-xs text-[#000503] italic">
                     {faq.a}
